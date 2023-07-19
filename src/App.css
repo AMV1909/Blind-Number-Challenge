@@ -1,0 +1,212 @@
+main {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ffd2ff;
+}
+
+.title {
+    padding: 16px;
+}
+
+div,
+.buttons button,
+.number,
+.generate-number {
+    border: none;
+    border-radius: 8px;
+}
+
+.game {
+    display: flex;
+    margin-right: -156px;
+}
+
+.little {
+    margin-right: -116px !important;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+
+    margin: 0 10px;
+}
+
+.buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px;
+    height: 32px;
+
+    font-size: 23.7px;
+    margin-top: 8px;
+
+    cursor: pointer;
+}
+
+.buttons button:nth-child(1) {
+    color: #11503b;
+    background-color: #4eebb6;
+}
+
+.buttons button:nth-child(2) {
+    color: #1b461b;
+    background-color: #64ee64;
+}
+
+.buttons button:nth-child(3) {
+    color: #532e00;
+    background-color: #ff8c00;
+}
+
+.buttons button:nth-child(4) {
+    color: #f0f8ff;
+    background-color: #181818;
+}
+
+.buttons button:nth-child(5) {
+    background-color: #ff9191;
+}
+
+.little-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 8px;
+
+    height: 104px;
+}
+
+.little-buttons button {
+    margin-top: 0;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 4px 8px;
+
+    background-color: #825e82;
+}
+
+@media (max-height: 200px) {
+    .game-board {
+        background-color: #000000;
+    }
+}
+
+.cell,
+.cell-selectable,
+.cell-disabled {
+    height: 40px;
+    width: 164px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 4px 0;
+    padding-top: 4px;
+
+    color: #825e82;
+    background-color: #ae8fae;
+
+    cursor: pointer;
+}
+
+.cell-disabled {
+    cursor: auto;
+}
+
+.cell-selectable {
+    color: #6b816a;
+    background-color: #91ae8f;
+}
+
+.selected {
+    color: #000000;
+    background-color: #f0f8ff;
+    cursor: auto;
+}
+
+.cell:hover {
+    background-color: #9cce99;
+}
+
+.cell-selectable:hover {
+    color: #83ad81;
+    background-color: #9cce99;
+}
+
+.selected:hover {
+    background-color: #f0f8ff;
+}
+
+.drag-over {
+    border: 4px solid #ffa500;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+
+    width: 200px;
+
+    margin-left: 10px;
+}
+
+.instructions p {
+    font-size: 23.7px;
+}
+
+.loser {
+    height: 42px;
+}
+
+.number,
+.generate-number {
+    height: 40px;
+    width: 164px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 4px;
+
+    cursor: move;
+
+    background-color: #f0f8ff;
+}
+
+.generate-number {
+    font-size: 23.7px;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    background-color: #00ff7f;
+}
+
+.generate-number:hover {
+    background-color: #02be60;
+}
+
+.button-loser {
+    background-color: #ff9191;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "blind-number-challenge",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "deploy": "vite build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "vite": "^4.4.0"
+  }
+}
