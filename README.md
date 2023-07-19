@@ -22,4 +22,4 @@ This is a game where the player has to sort a list of numbers in ascending order
 
 ## Deployment
 
-[Blind Number Challenge](https://amv1909.github.io/blind-number-challenge/)
+[Blind Number Challenge](https://amv1909.github.io/Blind-Number-Challenge/)
