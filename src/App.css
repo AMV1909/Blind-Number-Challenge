@@ -210,3 +210,17 @@ div,
 .button-loser {
     background-color: #ff9191;
 }
+
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .instructions {
+        display: none;
+    }
+
+    .game {
+        margin-right: 52px;
+    }
+}
