@@ -111,8 +111,10 @@ export function App() {
         e.target.classList.remove("drag-over");
     };
 
-    const onDragOver = (e) => {
+    const onDragOver = (e, index) => {
         e.preventDefault();
+
+        if (!checkCellSelectability(index)) return;
 
         e.target.classList.add("drag-over");
     };
@@ -123,6 +125,8 @@ export function App() {
 
     const onDrop = (e, index) => {
         e.preventDefault();
+
+        if (!checkCellSelectability(index)) return;
 
         const droppedNumber = parseInt(e.dataTransfer.getData("text/plain"));
         const updatedCells = [...game.cells];
@@ -176,7 +180,7 @@ export function App() {
                                 checkCellSelectability(index) &&
                                 selectCell(cell, index)
                             }
-                            onDragOver={onDragOver}
+                            onDragOver={(e) => onDragOver(e, index)}
                             onDragLeave={onDragLeave}
                             onDrop={(e) => onDrop(e, index)}
                         >
