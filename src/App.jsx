@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineReload } from "react-icons/ai";
 
 import "./App.css";
@@ -12,13 +12,19 @@ export function App() {
         showInstructions: false,
     });
 
-    window.addEventListener("keydown", (e) => {
-        if (e.code === "Space") {
-            generateNumber();
-        } else if (e.code === "KeyR") {
-            resetGame();
-        }
-    });
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.code === "KeyR") {
+                resetGame();
+            }
+        };
+
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []);
 
     useEffect(() => {
         if (game.cells.every((cell) => cell)) {
@@ -82,6 +88,7 @@ export function App() {
     };
 
     const generateNumber = () => {
+        if (game.loser || game.winner) return;
         if (game.number !== null) return;
 
         setGame({
@@ -190,12 +197,7 @@ export function App() {
                 </div>
 
                 <div className="instructions">
-                    {game.showInstructions && (
-                        <>
-                            <p>R - Reload</p>
-                            <p>Space - Generate Number</p>
-                        </>
-                    )}
+                    {game.showInstructions && <p>R - Reload</p>}
                 </div>
             </div>
 
